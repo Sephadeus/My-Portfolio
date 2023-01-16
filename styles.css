@@ -1,136 +1,149 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 :root {
-    --header-color: #063172;
-    --body-color: #e3e3e8;
-    --text-color: #fff;
+  --header-color: rgb(160, 187, 247);
+  --body-color: #e3e3e8;
+  --text-color: #fff;
+  --nav-link-bg: #063172;
 }
 
-html {
-    font-size: 16px;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+html,
+body {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+    background-color: var(--body-color);
 }
+
+main {
+  display: flex;
+  flex-direction: column;
+  padding: 30px auto ;
+  text-align: center;
+}
+
 .header {
-    display: flex;
-    flex-wrap: wrap;
-    padding: 10px;
-    margin: auto;
-    background-image: linear-gradient(to right, rgba(0, 0, 0, 1) 0%, var(--header-color) 75%);
-    color: var(--text-color);
-    min-height: 100px;
-    border: 5px solid black;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif}
-
-.banner {
-    margin: 0 -5px;
-    height: 10px;   
+  margin: 0;
+  padding-top: 25px;
+  background-image: linear-gradient(
+    to top,
+    rgb(71, 73, 71) 50%,
+    var(--header-color) 90%
+  );
+  display: block;
+  color: var(--text-color);
+  border-bottom: 10px solid rgb(71, 73, 71);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
 .title {
-    margin: auto;
-    padding: auto;
-    /*border: 2px solid black; */
-    font-size: 2em;
-    font-style: italic;
-    text-align: center;
+  margin: 0 0 30px 0;
+  padding: 30px 0px 0px 20px;
+  background-color: rgb(71, 73, 71);
+  border-right: 50px double rgb(255, 182, 11);
+  border-radius: 0 200% 0 0;
+  letter-spacing: 5px;
+  font-style: italic;
+  text-align: start;
 }
 
-.header ul {
-    margin: 25px auto 10px auto;
-    display: flex;
-    flex-wrap: wrap;
-   /* border: 2px solid black; */
+.nav-links {
+  text-align: center;
+  min-height: 10vh;
+  max-height: 200px;
+  padding: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  background-color: rgba(249, 255, 252, 0.072);
+  /* border: 2px solid black; */
 }
 
-.header li {
-    margin: 15px auto;
-    font-size: 1.5em;
-    font-style: italic;
-    list-style: none;
-    padding: 15px;
-    border: 2px  solid black;
-    background-image: linear-gradient(to top right, rgba(0, 100, 0, .5) 0%, rgba(0, 255, 0, 1) 100%);
-    border-radius: 70px 0px;
-    transform: rotate(-15deg);
-    box-shadow: black 5px 5px 5px;
+.nav-links a {
+  display: flex;
+  flex-wrap: wrap-reverse;
+  margin: auto; 
+  padding: 10px 30px;
+  font-style: bolder;
+  list-style: none;
+  text-decoration: none;
+  font-size: 18px;
+  color: var(--text-color);
+  background-color: var(--nav-link-bg);  
+  border-radius: 5px;
+  box-shadow: black 10px 5px 5px;
 }
 
-.header a {
-    color: var(--text-color);
-    text-decoration: none;
+.nav-links a:hover {
+  background-color: var(--text-color);
+  color: var(--nav-link-bg);
+  font-weight: bold;
+  cursor: pointer;
+  transition: color 1.5s, background-color 1.5s, transform 1.5s;
 }
 
-a:hover {
-    color:rgba(193, 254, 11, 0.897);
-    text-decoration: underline;
-}
+@media (max-width: 700px) {
 
-li:hover {
-    transform: rotate(10deg);
-}
-
-body {
-    background-color: var(--body-color);
-    font-family: inherit;
-}
-
-#AboutMe, #Work, #Contact {
-    display: flex;
-    margin: auto;
-    text-align: center;
-    padding: 10px;
-    border: 5px solid black;
-}
-
-.sidebar{
-    margin: auto;
-    padding: 30px;
-    width: 40%;
-}
-
-#AboutMe #Work #Contact, .primary {
-    border-left: 5px solid black;
-    width: 95%;
-    margin: auto;
-    padding: 10px;
-}
-
-#Work .primary {
+  .nav-links {
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
-    margin: auto;
-}
-.main-img .sub-img, figcaption {
-    text-align: center;
-    margin: auto;
+    justify-content: center;
 }
 
-.main-img img{
-    display: flex;
-    border: 3px solid cyan;
-    max-width: 50vw;
-    margin: auto;
-  }
-
-  .sub-img img{
-    display: flex;
-    flex-wrap: wrap;
-    margin: 15px auto;
-    max-width: 30%;
-  }
-
-#Contact .primary {
-    display: flex;
-    flex-direction: column;
+.nav-links a {
+  justify-content: center;
+  margin: 5px;
 }
 
-.contact-info, h3, a{
-    margin: 10px auto;
-    color: var(--header-color);
-    text-decoration: none;
+}
+
+.grid-item:hover {
+  scale: 105%;
+}
+
+img {
+  min-width: 40%;
+  max-width: 80%;
+  max-height: 300px;
+}
+
+article {
+margin-bottom: 30px;
+}
+
+.section-heading {
+  margin: 30px;
+  padding: 30px;
+}
+
+figcaption {
+  margin-top: 10px;
+  margin-bottom: 50px;
+}
+
+.contact-info a {
+  display: flex;
+  flex-direction: row;
+  width: justify;
+  min-width: 50%;
+  max-width: 80%;
+  margin: auto auto 50px auto;
+  justify-content: center;
+  padding: 20px;
+  border-radius: 10px;
+  color: var(--text-color);
+  text-decoration: none;
+  background-color: rgb(71, 72, 71);
+}
+
+.contact-info a:hover {
+  font-weight: bold;
+  color: black;
+  background-color: rgba(72, 182, 38, 0.606);
+  transition: color 1.5s, transform 1.5s;
+
 }
