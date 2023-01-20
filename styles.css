@@ -194,7 +194,6 @@ header {
 
 .grid-item:hover {
   font-size: 120%;
-  top: 0px;
   transition: font-size 1s, transform 1s;
 }
 
