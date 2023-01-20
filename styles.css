@@ -15,25 +15,39 @@ html,
 body {
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-    background-color: var(--body-color);
+  background-color: var(--body-color);
 }
 
 main {
   display: flex;
   flex-direction: column;
-  padding: 30px auto ;
+  padding: 30px;
   text-align: center;
 }
 
-.header {
+.myface {
+  margin: 20px;
+  opacity: 0.95;
+  border: 10px solid var(--nav-link-bg);
+  border-radius: 50%;
+  width: 20%;
+  height: 20%;
+  min-width: 150px;
+}
+
+header {
+  width: 100%;
   margin: 0;
+  text-align: center;
+  justify-content: center;
   padding-top: 25px;
   background-image: linear-gradient(
     to top,
     rgb(71, 73, 71) 50%,
-    var(--header-color) 90%
+    var(--header-color) 100%
   );
-  display: block;
+  display: flex;
+  flex-direction: column;
   color: var(--text-color);
   border-bottom: 10px solid rgb(71, 73, 71);
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
@@ -41,14 +55,29 @@ main {
 }
 
 .title {
-  margin: 0 0 30px 0;
-  padding: 30px 0px 0px 20px;
-  background-color: rgb(71, 73, 71);
-  border-right: 50px double rgb(255, 182, 11);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 0;
+  padding: 20px 0px 0px 20px;
+  background-color: transparent;
+  border-right: 40px double rgb(255, 182, 11);
   border-radius: 0 200% 0 0;
+
   letter-spacing: 5px;
   font-style: italic;
   text-align: start;
+}
+
+.nameface {
+  padding: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  text-align: center;
+  align-items: center;
+  margin: auto;
+  font-size: auto;
 }
 
 .nav-links {
@@ -57,7 +86,7 @@ main {
   max-height: 200px;
   padding: auto;
   display: flex;
-  flex-direction: row;  
+  flex-direction: row;
   width: justify;
   justify-content: space-evenly;
   background-color: rgba(249, 255, 252, 0.072);
@@ -67,14 +96,14 @@ main {
 .nav-links a {
   display: flex;
   flex-wrap: wrap-reverse;
-  margin: auto; 
+  margin: auto;
   padding: 10px 30px;
   font-style: bold;
   list-style: none;
   text-decoration: none;
   font-size: 18px;
   color: var(--text-color);
-  background-color: var(--nav-link-bg);  
+  background-color: var(--nav-link-bg);
   border-radius: 15px 0px 15px 0px;
   box-shadow: black 10px 5px 5px;
 }
@@ -85,24 +114,47 @@ main {
   font-weight: bolder;
   border-radius: 0px 15px 0px 15px;
   cursor: pointer;
-  transition: color 1.5s, background-color 1.5s, border-radius 1.5s;
+  transition: color 1s, background-color 1s, border-radius 1s;
 }
 
 @media (max-width: 700px) {
-
   .nav-links {
     display: flex;
     flex-direction: column;
     justify-content: center;
+  }
+
+  .nav-links a {
+    justify-content: center;
+    margin: 5px;
+  }
 }
 
-.nav-links a {
-  justify-content: center;
-  margin: 5px;
-}
+@media(max-width: 300px) {
+  body, header, main {
+    text-align: center;
+    font-size:inherit;
+    margin: 0;
+    padding: 0;
+  }
 
-}
+  .grid-container {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+  }
 
+  .project1 img {
+    max-width: 100%;
+    width: 99vw;
+  }
+
+  img {
+    max-width: 100%;
+    min-width: 0vw;
+    min-height: 150px;
+  }
+}
 .grid-container {
   margin: auto;
 }
@@ -114,17 +166,20 @@ main {
 }
 
 img {
-  width: 60%;
-  height: 220px;
+  margin: auto;
+  width: 40vw;
   opacity: 0.5;
+  max-height: 300px;
 }
 
-.project-1 img{
-  width: 90%;
+.project-1 img {
+  max-width: 99vw;
+  width: 100%;
+  max-height: 100%;
 }
 
 article {
-margin-bottom: 30px;
+  margin-bottom: 30px;
 }
 
 .section-heading {
@@ -140,6 +195,8 @@ figcaption {
 .contact-info a {
   display: flex;
   flex-direction: row;
+  word-wrap: wrap;
+  word-break: break-all;
   width: justify;
   min-width: 50%;
   max-width: 80%;
@@ -158,7 +215,6 @@ figcaption {
   background-color: rgba(72, 182, 38, 0.606);
   transition: color 1.5s, transform 1.5s;
 }
-
 
 footer {
   text-align: center;
