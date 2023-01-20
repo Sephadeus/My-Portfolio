@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  z-index: 0;
 }
 
 :root {
@@ -10,6 +11,7 @@
   --text-color: #fff;
   --nav-link-bg: #063172;
   --section-bg: rgb(195, 214, 255);
+  --footer-link-bg: rgb(214, 86, 7);
 }
 
 html,
@@ -38,7 +40,7 @@ main {
 
 .myface:hover {
   transform: rotateX(360deg);
-  transition: transform 2s;
+  transition: transform 1s;
 }
 
 header {
@@ -120,7 +122,7 @@ header {
   font-weight: bolder;
   border-radius: 0px 15px 0px 15px;
   cursor: pointer;
-  transition: color 1s, background-color 1s, border-radius 1s;
+  transition: color .5s, background-color .5s, border-radius .5s;
 }
 @media (min-width: 900px) {
   p, ul, li {
@@ -164,6 +166,8 @@ header {
     max-width: 100%;
     min-width: 70%;
     min-height: 150px;
+    border: 22px solid black;
+
   }
 
   section {
@@ -183,9 +187,15 @@ header {
 }
 
 .grid-item img:hover {
-  scale: 95%;
+  scale: 98%;
   opacity: 1;
-  transition: opacity 2s, scale 2s;
+  transition: opacity 1s, scale 1s;
+}
+
+.grid-item:hover {
+  font-size: 120%;
+  top: 0px;
+  transition: font-size 1s, transform 1s;
 }
 
 p, ul, li {
@@ -196,8 +206,9 @@ p, ul, li {
 img {
   margin: auto;
   width: 40vw;
-  opacity: 0.5;
+  opacity: .4;
   max-height: 300px;
+  border: 22px solid black;
 }
 
 .project-1 img {
@@ -257,25 +268,29 @@ figcaption {
   font-weight: bold;
   color: black;
   background-color: rgba(72, 182, 38, 0.606);
-  transition: color 1.5s, transform 1.5s;
+  transition: color .5s, transform 1s;
 }
 
 footer {
   text-align: center;
-  margin: 30px auto;
+  margin: 30px auto 0px auto;
+  padding: 100px;
+  background-color: rgba(22, 22, 22, 0.86);
+
 }
 
 footer a {
   margin: 30px auto 30px auto;
   padding: 20px;
   text-align: center;
-  background-color: var(--nav-link-bg);
+  background-color: var(--footer-link-bg);
   color: var(--text-color);
   border-radius: 10px;
 }
 
 footer a:hover {
   background-color: var(--text-color);
-  color: var(--nav-link-bg);
-  transition: color 2s, background-color 2s;
+  font-weight: bolder;
+  color: var(--footer-link-bg);
+  transition: color 1.2s, background-color 1.2s;
 }
