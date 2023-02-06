@@ -9,7 +9,7 @@ The purpose of this project was to practice what has been learned in the bootcam
 Check out the screenshot in the related Github repository or visitg this link here --> [Imgur](https://i.imgur.com/KOIDiyQ.jpg)
 
 ## Installation
-This project is a webpage which requires no installation. Simply click the URL on Github or copy and paste this link --> (https://sephadeus.github.io/M2Challenge/) to navigate to the webpage on the browser.
+This project is a webpage which requires no installation. Simply click the URL on Github or copy and paste this link --> (https://sephadeus.github.io/My-Portfolio/) to navigate to the webpage on the browser.
 
 ## Usage
 This project can be used by other developers as a reference if they want to build a portfolio webpage themselves that looks similar. To do this, right click on the webpage and click on "inspect" under "developer tools".
