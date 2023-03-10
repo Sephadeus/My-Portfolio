@@ -1,9 +1,14 @@
+
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  z-index: 0;
-  scroll-behavior: smooth;
+}
+
+html {
+  scroll-behavior: smooth !important;
+  overflow-y: scroll;
 }
 
 :root {
@@ -15,7 +20,6 @@
   --footer-link-bg: rgb(214, 86, 7);
 }
 
-html,
 body {
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
