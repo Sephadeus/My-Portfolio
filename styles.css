@@ -175,7 +175,7 @@ footer a {
 #to-top {
   position: fixed;
   right: 10px;
-  bottom: 50px;
+  bottom: 35px;
 
   background-color: #cb7015;
   color: var(--main-text-color);
