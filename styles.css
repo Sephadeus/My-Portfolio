@@ -15,14 +15,14 @@ html {
 }
 
 :root {
-  --header-color: rgb(122, 226, 255);
+  --header-color: rgb(81, 17, 17);
   --project-bg-color: var(--nav-link-bg);
   --footer-color: rgb(22, 22, 22);
-  --body-color: #fbd3bc;
+  --body-color: #b5b4b4;
   --text-color: #fff;
   --main-text-color: #323232;
-  --nav-link-bg: rgba(122, 226, 255, .85);
-  --nav-link-text: var(--header-color);
+  --nav-link-bg: var(--header-color);
+  --nav-link-text: var(--body-color);
   --section-bg: rgb(226, 235, 255);
   --footer-link-bg: rgb(214, 86, 7);
   --glow: rgba(0, 0, 0, 0.553);
@@ -51,7 +51,7 @@ header {
 }
 
 .nav-links a {
-  color: var(--main-text-color);
+  color: var(--nav-link-text);
   margin: 10px;
   word-break: keep-all;
   font-size: 1.4em;
@@ -128,7 +128,7 @@ video {
   padding: 15px;
   font-size: 1.4em;
   text-align: center;
-  color: var(--main-text-color);
+  color: var(--body-color);
 }
 
 .grid-item:hover{
@@ -143,6 +143,7 @@ video {
 
 .skill {
   background-color: var(--header-color);
+  color: var(--body-color);
   border-radius: 25px;
   padding: 15px;
   height: auto;
@@ -177,8 +178,8 @@ footer a {
   right: 10px;
   bottom: 35px;
 
-  background-color: #cb7015;
-  color: var(--main-text-color);
+  background-color: var(--header-color);
+  color: var(--body-color);
   padding: 10px;
   font-size: 1.25em;
   border-radius: 12px;
