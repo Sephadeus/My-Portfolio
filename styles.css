@@ -16,6 +16,7 @@ html {
 
 :root {
   --header-color: rgb(196, 109, 54);
+  --project-bg-color: rgba(255, 189, 138, 0.8);
   --footer-color: rgb(22, 22, 22);
   --body-color: #d3d3d7;
   --text-color: #fff;
@@ -24,6 +25,7 @@ html {
   --nav-link-text: #cb7015;
   --section-bg: rgb(226, 235, 255);
   --footer-link-bg: rgb(214, 86, 7);
+  --glow: rgba(0, 0, 0, 0.553);
   --font-families: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
@@ -52,6 +54,7 @@ header {
   color: var(--main-text-color);
   margin: 10px;
   word-break: keep-all;
+  font-size: 1.4em;
 }
 
 a {
@@ -67,7 +70,7 @@ main {
 
 h1 {
   margin-top: 0px;
-  font-size: 4.5em;
+  font-size: 4.65em;
   font-weight: lighter;
   color: var(--main-text-color);
   border-bottom: 1px solid var(--main-text-color);
@@ -106,24 +109,36 @@ h1 {
   display: block;
   width: 400px;
   height: 400px;
-  background-color: var(--header-color);
+  background-color: var(--project-bg-color);
   margin: 15px;
   border-radius: 20px;
   box-shadow: 15px 15px 0px 0px var(--main-text-color);
   overflow: hidden;
+  
 }
 
 .grid-item img,
 video {
   width: 100%;
-  height: 65%;
+  height: 50%;
 }
 
 .grid-item figcaption {
-  padding: 25px;
+  padding: 15px;
   font-size: 1.2em;
   text-align: center;
+  color: var(--main-text-color);
 }
+
+.grid-item:hover{
+  box-shadow: 0px 0px 10px 10px  var(--glow);
+  scale: 97%;
+  font-size: 1.1em;
+  z-index: 3; 
+  transition: box-shadow 1s, scale 1s, font-size 1s;  
+ 
+}
+
 
 .skill {
   background-color: rgba(28, 35, 255, 0.069);
@@ -178,5 +193,23 @@ footer a {
 html {
   font-size: 14px;
 }
+
+.grid-item {
+  width: 300px;
+  height: 300px;
+}
+
+}
+
+@media(max-width: 300px) { 
+
+  html {
+    font-size: 12px;
+  }
+  
+  .grid-item {
+    width: 100%;
+    height: 300px;
+  }
 
 }
