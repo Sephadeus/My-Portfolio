@@ -15,14 +15,14 @@ html {
 }
 
 :root {
-  --header-color: rgb(196, 109, 54);
-  --project-bg-color: rgba(255, 189, 138, 0.8);
+  --header-color: rgb(122, 226, 255);
+  --project-bg-color: var(--nav-link-bg);
   --footer-color: rgb(22, 22, 22);
-  --body-color: #d3d3d7;
+  --body-color: #fbd3bc;
   --text-color: #fff;
   --main-text-color: #323232;
-  --nav-link-bg: #ffd4a5;
-  --nav-link-text: #cb7015;
+  --nav-link-bg: rgba(122, 226, 255, .85);
+  --nav-link-text: var(--header-color);
   --section-bg: rgb(226, 235, 255);
   --footer-link-bg: rgb(214, 86, 7);
   --glow: rgba(0, 0, 0, 0.553);
@@ -55,6 +55,7 @@ header {
   margin: 10px;
   word-break: keep-all;
   font-size: 1.4em;
+  font-weight: bold;
 }
 
 a {
@@ -125,7 +126,7 @@ video {
 
 .grid-item figcaption {
   padding: 15px;
-  font-size: 1.2em;
+  font-size: 1.4em;
   text-align: center;
   color: var(--main-text-color);
 }
@@ -141,13 +142,14 @@ video {
 
 
 .skill {
-  background-color: rgba(28, 35, 255, 0.069);
+  background-color: var(--header-color);
   border-radius: 25px;
   padding: 15px;
   height: auto;
 }
 
 .section-heading {
+  font-size: 1.5em;
   text-align: center;
   margin: 35px;
 }
@@ -189,7 +191,7 @@ footer a {
 @media(max-width: 1000px) {
 
 html {
-  font-size: 14px;
+  font-size: 18px;
 }
 
 .grid-item {
@@ -198,6 +200,13 @@ html {
 }
 
 }
+
+@media(max-width: 700px) {
+  html {
+    font-size: 14px;
+  }
+
+ }
 
 @media(max-width: 300px) { 
 
