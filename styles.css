@@ -4,6 +4,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  z-index: 0;
 }
 
 html {
@@ -11,14 +12,14 @@ html {
   overflow-y: scroll;
   overflow-x: hidden;
   font-size: 24px;
-  color: var(--main-text-color);
+  color: var(--main-text-color);  
 }
 
 :root {
   --header-color: rgb(81, 17, 17);
   --project-bg-color: var(--nav-link-bg);
   --footer-color: rgb(22, 22, 22);
-  --body-color: #b5b4b4;
+  --body-color: #e4e3e0;
   --text-color: #fff;
   --main-text-color: #323232;
   --nav-link-bg: var(--header-color);
@@ -26,6 +27,7 @@ html {
   --section-bg: rgb(226, 235, 255);
   --footer-link-bg: rgb(214, 86, 7);
   --glow: rgba(0, 0, 0, 0.553);
+  --blu-glow: rgba(130, 234, 255, 0.616);
   --font-families: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
@@ -33,17 +35,61 @@ html {
 body {
   font-family: "Poppins", "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-  background-color: var(--body-color);
   position: relative;
-
+  background-color: var(--body-color);
 }
+
+.spinner {
+  position: fixed;
+  z-index: -3;
+  top: 15vh;
+  left: 15vw;
+  width: 70vw;
+  aspect-ratio: 1/1;  
+background: linear-gradient(33deg, var(--body-color) 33%, var(--blu-glow) 66%, var(--body-color) 100%);
+box-shadow: 20px 20px 50px var(--body-color);
+border-radius: 50%;
+  animation: rotate-box 3s linear infinite;
+}
+
+@keyframes unblur {
+    0% {
+filter: blur(3px)    }
+
+
+    100% {
+filter: blur(0);    
+}
+  }
+
+
+  @keyframes rotate-box {
+
+    0% {
+      transform: rotate(0deg);
+      
+    }
+
+    50% {
+      transform: rotate(180deg);
+    }
+
+    100% {
+      transform: rotate(360deg);
+    }
+  }
 
 header {
   position: fixed;
+  z-index: 2;
   background-color: var(--header-color);
   width: 100%;
-  padding: 20px;
+  padding: 1em;
   top: 0px;
+  border-bottom: 5px solid black;
+  box-shadow: 10px 0px 10px 3px var(--main-text-color);
+    text-shadow: 3px 3px 0em var(--main-text-color);  
+
 }
 
 .nav-links {
@@ -65,22 +111,30 @@ a {
 }
 
 main {
-  padding: 20px;
   margin: auto;
-}
-
-h1 {
-  margin-top: 0px;
-  font-size: 7em;
-  font-weight: lighter;
-  color: var(--main-text-color);
-  border-bottom: 1px solid var(--main-text-color);
+ 
 }
 
 #title {
   height: 100vh;
-  padding-top: 25vh;
+  margin: auto;
+  padding: 3em;
+  padding-top: 30vh;
 }
+
+#title h1 {
+  margin-top: 0px;
+  font-size: 5em;
+  font-weight: lighter;
+  color: var(--main-text-color);
+  border-bottom: 1px solid var(--main-text-color);
+  text-shadow: 8px 8px .08em rgba(77, 75, 75, 0.708);
+}
+
+#title p {
+  text-shadow: 0px 1px .1em rgba(77, 75, 75, 0.708), -1px -1px .08em rgba(200, 196, 196, 0.708);
+}
+
 
 #about,
 #skills,
@@ -89,6 +143,7 @@ h1 {
   flex-direction: column;
   justify-content: center;
   height: 100vh;
+  padding: 1em;
 }
 
 
@@ -99,47 +154,71 @@ h1 {
 }
 
 .grid-container {
+  position: relative;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-evenly;
+  
 
 }
 
-.grid-item {
+.grid-container a {
+  background-color: transparent;
+}
+
+.grid-container figure{
   display: block;
-  width: 400px;
-  height: 400px;
+  position: relative;
+  width: 20em;
+  aspect-ratio: 4/3;
   background-color: var(--project-bg-color);
-  margin: 35px;
+  margin: 30px auto;
   border-radius: 20px;
-  box-shadow: 15px 15px 0px 0px var(--main-text-color);
+  box-shadow: 0px 0px 2px 1px  var(--glow);
   overflow: hidden;
-  
+  scale: 97%;
+z-index: 0; }
+
+.grid-item {
+  filter:blur(2px)
 }
 
 .grid-item img,
 video {
-  width: 100%;
+  /* z-index: inherit; */
+  width: 105%;
   height: 50%;
 }
 
-.grid-item figcaption {
+.grid-item p{
   margin: auto;
   padding: 15px;
-  font-size: 1.4em;
+  font-size: 1.35em;
   text-align: center;
   color: var(--body-color);
+  text-shadow: 3px 3px 0em var(--main-text-color);  
+  font-weight: bold;
 }
 
-.grid-item:hover{
-  box-shadow: 0px 0px 10px 10px  var(--glow);
-  scale: 97%;
-  font-size: 1.1em;
-  z-index: 3; 
-  transition: box-shadow 1s, scale 1s, font-size 1s;  
- 
+figure:hover {
+  box-shadow: 10px 10px 10px 3px var(--main-text-color);
+  scale: 100%;
+  z-index: 555 !important;
+  transform: rotate3d(100, 0, 100, -20deg);
+  transform: translate(-5px, 0%);
+  border: 5px solid var(--main-text-color);
+  font-size: 105%;
+  transition: all 1.5s;  
+  animation: unblur linear .5s forwards;
 }
+
+.grid-container a:hover {
+  background-color: transparent;
+  z-index: 555 !important;
+}
+
+
 
 
 .skill {
@@ -147,6 +226,7 @@ video {
   color: var(--body-color);
   border-radius: 25px;
   padding: 15px;
+  text-shadow: 2px 2px 0.1em var(--main-text-color);
   height: auto;
 }
 
@@ -154,6 +234,8 @@ video {
   font-size: 1.5em;
   text-align: center;
   margin: 35px;
+  text-shadow: -1px -1px 0em var(--body-color), -1px -1px 0.15em var(--glow) ;  
+
 }
 
 footer {
@@ -175,19 +257,30 @@ footer a {
 }
 
 #to-top {
-  position: fixed;
+  display: block;
+  position: fixed ;
   right: 15px;
-  bottom: 50px;
-
+  top: 120px;
+  width: max-content;
+  height:max-content;
   background-color: var(--header-color);
   color: var(--body-color);
-  padding: 10px;
+  padding: .35em;
   font-size: 1.25em;
   border-radius: 12px;
   z-index: 2;
-  transform: rotate(-25deg);
-  box-shadow: 5px 5px 0px 0px var(--main-text-color);
+  transform: rotate(25deg);
+  box-shadow: 5px 5px 0px 4px var(--main-text-color);
+  text-shadow: 5px 5px 0.1em var(--main-text-color) ;  
   border: 3px solid var(--main-text-color);
+}
+
+#to-top:hover {
+  /* transform: rotate(0deg); */
+  box-shadow: 0px 0px 25px 3px var(--blu-glow);
+  border: 1px solid var(--main-text-color);
+  transition: box-shadow 1.5s, border .5s, text-shadow 1s;
+
 }
 
 @media(max-width: 1000px) {
@@ -197,8 +290,7 @@ html {
 }
 
 .grid-item {
-  width: 300px;
-  height: 300px;
+  width: 10em;
 }
 
 }
@@ -235,7 +327,6 @@ html {
   
   .grid-item {
     width: 100vw;
-    height: 300px;
     border-radius: 0%;
     margin: 20px auto;
     box-shadow: 0px 10px 10px 0px var(--glow);
