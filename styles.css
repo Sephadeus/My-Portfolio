@@ -265,21 +265,21 @@ footer a {
   height:max-content;
   background-color: var(--header-color);
   color: var(--body-color);
-  padding: .35em;
+  padding: .5em;
   font-size: 1.25em;
   border-radius: 12px;
   z-index: 2;
   transform: rotate(25deg);
-  box-shadow: 5px 5px 0px 4px var(--main-text-color);
+  box-shadow: 3px 3px 3px 3px var(--main-text-color);
   text-shadow: 5px 5px 0.1em var(--main-text-color) ;  
-  border: 3px solid var(--main-text-color);
+  border: 1px solid var(--main-text-color);
 }
 
 #to-top:hover {
   /* transform: rotate(0deg); */
-  box-shadow: 0px 0px 25px 3px var(--blu-glow);
+  box-shadow: 0px 0px 35px 3px var(--blu-glow);
   border: 1px solid var(--main-text-color);
-  transition: box-shadow 1.5s, border .5s, text-shadow 1s;
+  transition: box-shadow .5s, border .5s, text-shadow 1s;
 
 }
 
