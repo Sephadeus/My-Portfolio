@@ -207,7 +207,7 @@ figure:hover {
   z-index: 555 !important;
   transform: rotate3d(100, 0, 100, -20deg);
   transform: translate(-5px, 0%);
-  border: 5px solid var(--main-text-color);
+  border: 1px solid var(--main-text-color);
   font-size: 105%;
   transition: all 1.5s;  
   animation: unblur linear .5s forwards;
