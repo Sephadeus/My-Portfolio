@@ -202,7 +202,7 @@ video {
 }
 
 figure:hover {
-  box-shadow: 10px 10px 10px 3px var(--main-text-color);
+  box-shadow: 10px 10px 10px 1px var(--main-text-color);
   scale: 100%;
   z-index: 555 !important;
   transform: rotate3d(100, 0, 100, -20deg);
