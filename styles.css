@@ -12,7 +12,6 @@
 
 html {
   scroll-behavior: smooth !important;
-  overflow-x: none;
   color: var(--main-text-color);
   font-size: 24px;
 }
@@ -49,7 +48,7 @@ body {
 }
 
 body::-webkit-scrollbar {
-  max-width: 7px;
+  max-width: 5px;
 }
 
 body::-webkit-scrollbar-track {
@@ -72,8 +71,6 @@ main {
   align-content: center;
   align-items: center;
   min-height: 100dvh;
-  width: 98dvw;
-  width: 98vw;
 
 }
 
@@ -103,15 +100,16 @@ a {
 header {
   position: sticky;
   top: 0;
+  left: 0;
+  right: 0;
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
-  z-index: 10;
+  z-index: 99;
   background-color: var(--header-color);
   width: 100%;
-  /* min-height: 200px;
-  max-height: 20dvh;
-  max-height: 20vh; */
+  min-height: max-content;
+  
   /* border-bottom: 2px solid black; */
   box-shadow: 5px 0px 5px 5px var(--main-text-color);
   text-shadow: 1px 1px 0em var(--main-text-color);
@@ -124,7 +122,7 @@ header {
   justify-content: space-around;
 }
 
-.nav-links > a {
+.nav-links>a {
   margin: auto .75em;
   color: var(--nav-link-text);
   word-break: keep-all;
@@ -134,7 +132,7 @@ header {
   transition: all .2s;
 }
 
-.nav-links > a:hover {
+.nav-links>a:hover {
   padding: .45em;
   border-radius: 30px;
   color: var(--project-bg-color);
@@ -178,16 +176,16 @@ header {
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  background-color: rgba(14, 14, 14, 0.847);
+
 }
 
 
 
 #title .spinners {
-  position: absolute;
-  display: flex;
+  display: block;
   width: 100%;
-  justify-content: center;
-  align-content: center;
+  height: 100%;
   opacity: .45;
 }
 
@@ -202,15 +200,13 @@ header {
 #title .spinner1 {
   background: linear-gradient(90deg, rgba(8, 249, 221, 0.655) 0%, rgba(0, 237, 162, 0.413) 90%);
   box-shadow: 15px 15px 150px 1px var(--project-bg-color), 15px 15px 750px 10px rgb(40, 43, 43);
-   filter: blur(13px);
   animation: rotate-box 10s cubic-bezier(0.6, 0.04, 0.98, 0.335) infinite;
 }
 
 #title .spinner2 {
   background: linear-gradient(90deg, rgba(185, 11, 11, 0.731) 0%, rgb(6, 6, 6) 90%);
   box-shadow: 15px 15px 150px 1px rgb(247, 247, 247), 0px 0px 100px 10px rgb(0, 24, 95);
-  filter: blur(13px);
-  animation: rotate-box-2 10s cubic-bezier(0.895, 0.03, 0.685, 0.22) infinite; 
+  animation: rotate-box-2 15s cubic-bezier(0.895, 0.03, 0.685, 0.22) infinite;
 }
 
 /* Spinner Animation */
@@ -218,22 +214,20 @@ header {
 @keyframes rotate-box {
 
   0% {
-    filter: blur(0px);
     transform: rotate(0deg);
-        border-radius: 50%;
-        width: 11vw;
-        transform: translate(500%, 250%);
+    border-radius: 50%;
+    width: 11vw;
+    transform: translate(2000px, 2000px);
 
 
   }
 
 
   50% {
-    filter: blur(33px);
-    transform: rotate(180deg);
-    border-radius: 50% 100%;
+    transform: rotate(270deg);
+    border-radius: 0%;
     transform: translate(0%, 0%);
-    width: 77vw;
+    width: 35vw;
 
   }
 
@@ -241,10 +235,9 @@ header {
 
   100% {
     width: 11vw;
-    filter: blur(0px);
-    transform: rotate(360deg);
-    border-radius: 50% ;
-    transform: translate(-500%, -250%);
+    transform: rotate(540deg);
+    border-radius: 50%;
+    transform: translate(-2000px, -2000px);
 
   }
 
@@ -253,26 +246,23 @@ header {
 @keyframes rotate-box-2 {
 
   0% {
-    filter: blur(0px);
     transform: rotate(0deg);
     border-radius: 50% 100%;
     width: 11vw;
-    transform: translate(-500%, -250%);
+    transform: translate(-2000px, -300px);
 
   }
 
 
   50% {
-    filter: blur(33px);
     transform: rotate(-180deg);
     border-radius: 50%;
-    width: 77vw;
-    transform: translate(0%, 0%);
+    width: 33vw;
+    transform: translate(0px, 0px);
   }
 
- 
+
   100% {
-    filter: blur(0px);
     transform: rotate(-360deg);
     border-radius: 100% 50%;
     transform: translate(500%, 250%);
@@ -282,7 +272,12 @@ header {
 
 #title .title-content {
   filter: contrast(100%);
-  text-align: center;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   align-items: center;
   justify-content: center;
   display: flex;
@@ -292,9 +287,9 @@ header {
 }
 
 #title h1 {
-  font-size: 200%;
-  max-width: 80vw;
+  font-size: 175%;
   padding: .5em;
+  margin-top: 20vh;
 }
 
 /* #title-ul {
@@ -311,45 +306,31 @@ header {
 
 }
 
-
 #title,
 #about,
 #skills,
 #projects,
 #contact {
+  width: 100%;
+  min-height: 100dvh;
+  min-height: 100vh;
   color: var(--text-color);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-content: center;
   align-items: center;
-  vertical-align: middle;
-  min-height: 100dvh;
-  min-height: 100vh;
-  /* width: 100dvw;
-  width: 100vw; */
-  padding: 1.25em;
-  
-
-  /* border: 2px solid red; */
 }
 
 
-#about,
-#skills,
-#projects {
-  padding-top: 10%;
-}
-
-h1,
-h2 {
-  border-bottom: 1px solid var(--text-color);
-  font-weight: lighter;
+#about, #skills, #projects {
+  padding-top: 25vh;
 }
 
 #about>article {
   max-width: 40ch;
-  text-align: center;
+  justify-content: center;
+  align-items: center;
   padding: 1em;
 }
 
@@ -357,13 +338,18 @@ h2 {
   position: relative;
   /* border: 1px solid black; */
   margin-top: 1em;
-  padding: 1em;
+  padding: 3rem;
   display: grid;
-  grid-template-columns: repeat(auto-fill, 250px);
+  place-items: center;
+  gap: 1.25rem;
+  padding: 2rem;
+  grid-template-columns: repeat(auto-fill, 275px);
   grid-template-rows: repeat(auto-fill, 1fr);
-  gap: 1em;
-  max-width: 95dvw;
-  max-width: 95vw;
+  /* display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;*/
+  justify-content: space-evenly;
+  width: 80%;
 }
 
 .card {
@@ -377,7 +363,7 @@ h2 {
   justify-content: center;
   align-items: center;
   color: var(--body-color);
-  border-radius: 50%;
+  border-radius: 10%;
   border: .5px solid var(--main-text-color);
   transition: all .5s;
 }
@@ -386,6 +372,7 @@ h2 {
   margin: auto;
   padding: 1em;
   height: 100%;
+  width: 100%;
   display: flex;
   text-align: center;
   flex-direction: column;
@@ -396,27 +383,33 @@ h2 {
   transition: all .5s ease-in-out;
 }
 
-.card:hover, .card:hover content {
+.card:hover {
+  background: transparent;
+  border: none;
+}
+
+.card:hover,
+.card:hover content {
   margin: auto;
   overflow: visible;
-  /* position: absolute; */
-  /* left: 0; */
   height: 100%;
-  background: rgba(49, 49, 50, 1);
   aspect-ratio: auto;
   border-radius: 25px;
   min-height: 400px;
-  max-width: 100%;
 }
 
 .card:hover .content {
-  /* z-index: 11; */
+  z-index: 11;
   opacity: 1;
   background: rgba(49, 49, 50, 1);
   border-radius: 25px;
   box-shadow: 4px 4px 10px 1px black;
+  width: 100%;
 }
 
+/* .card:hover> .card-container {
+display: flex;
+} */
 
 .content p {
   margin-bottom: .65rem;
@@ -504,6 +497,9 @@ h2 {
 }
 
 .section-heading {
+  margin: 1em;
+  border-bottom: 1px solid var(--text-color);
+  font-weight: 100;
   align-items: center;
   text-align: center;
   text-shadow: -1px -1px 0em var(--body-color), -1px -1px 0.15em var(--glow);
@@ -513,6 +509,7 @@ h2 {
 
 footer {
   width: 100%;
+  text-align: center;
   align-items: center;
   background-color: var(--main-text-color);
   color: var(--nav-link-text);
@@ -534,7 +531,7 @@ footer {
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
-  margin: 1em;
+  margin: 2em;
   text-decoration: none;
   color: var(--body-color);
   transition: all .1s;
@@ -583,25 +580,27 @@ footer {
     grid-template-columns: repeat(auto-fill, 50vw);
   }
 
-  .card:hover, .card:hover content {
-    width: 98vw;
+  .card:hover,
+  .card:hover content {
+    margin-left: auto;
+    place-self: center;
+    max-width: 100%;
+    height: 100%;
   }
-  
 
-#title,
-#about,
-#skills,
-#projects,
-#contact {
-padding-top: 45%;
-}
+
+  /* section {
+    padding-top: 50%;
+  } */
 
 }
 
 
 @media(max-width: 300px) {
 
-  
+html {
+  font-size: 14px;
+}
 
   .nav-links {
     margin: auto;
@@ -609,26 +608,26 @@ padding-top: 45%;
     justify-content: center;
   }
 
- .nav-links a{
-  margin: .25em;
- }
+  .nav-links a {
+    margin: .25em;
+  }
 
- #to-top {
-  margin: .5em;
- }
+  #to-top {
+    margin: .5em;
+  }
 
 
 
-#title p {
-  max-width: 85vw;
-}
+  #title p {
+    max-width: 100%;
+  }
 
- #title,
-#about,
-#skills,
-#projects,
-#contact {
-padding-top: 85%;
-}
+  #title,
+  #about,
+  #skills,
+  #projects,
+  #contact {
+    padding-top: 25vh;
+  }
 
 }
