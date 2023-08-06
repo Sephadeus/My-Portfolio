@@ -109,8 +109,6 @@ header {
   background-color: var(--header-color);
   width: 100%;
   min-height: max-content;
-  
-  /* border-bottom: 2px solid black; */
   box-shadow: 5px 0px 5px 5px var(--main-text-color);
   text-shadow: 1px 1px 0em var(--main-text-color);
 }
@@ -119,7 +117,7 @@ header {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: space-evenly;
 }
 
 .nav-links>a {
@@ -191,22 +189,21 @@ header {
 
 #title .spinner {
   position: absolute;
-  display: flex;
+  display: block;
   align-self: center;
   aspect-ratio: 1/1;
-  width: 10vw;
 }
 
 #title .spinner1 {
   background: linear-gradient(90deg, rgba(8, 249, 221, 0.655) 0%, rgba(0, 237, 162, 0.413) 90%);
   box-shadow: 15px 15px 150px 1px var(--project-bg-color), 15px 15px 750px 10px rgb(40, 43, 43);
-  animation: rotate-box 10s cubic-bezier(0.6, 0.04, 0.98, 0.335) infinite;
+  animation: rotate-box 60s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite;
 }
 
 #title .spinner2 {
   background: linear-gradient(90deg, rgba(185, 11, 11, 0.731) 0%, rgb(6, 6, 6) 90%);
   box-shadow: 15px 15px 150px 1px rgb(247, 247, 247), 0px 0px 100px 10px rgb(0, 24, 95);
-  animation: rotate-box-2 15s cubic-bezier(0.895, 0.03, 0.685, 0.22) infinite;
+  animation: rotate-box-2 35s cubic-bezier(0.55, 0.055, 0.675, 0.19) infinite;
 }
 
 /* Spinner Animation */
@@ -214,31 +211,24 @@ header {
 @keyframes rotate-box {
 
   0% {
-    transform: rotate(0deg);
-    border-radius: 50%;
-    width: 11vw;
-    transform: translate(2000px, 2000px);
-
-
+    transform: rotate(0deg) translate(-100%, 100%);
+    border-radius: 0%;
+    width: 44vw;
+    opacity: 1;
   }
-
 
   50% {
-    transform: rotate(270deg);
+    transform: rotate(270deg) translate(0%, 0%);
     border-radius: 0%;
-    transform: translate(0%, 0%);
-    width: 35vw;
+    width: 22vw;
 
   }
 
-
-
   100% {
-    width: 11vw;
-    transform: rotate(540deg);
-    border-radius: 50%;
-    transform: translate(-2000px, -2000px);
-
+    width: 44vw;
+    transform: rotate(540deg) translate(1000%, -100%);
+    border-radius: 0%;
+    opacity: 0;
   }
 
 }
@@ -246,26 +236,17 @@ header {
 @keyframes rotate-box-2 {
 
   0% {
-    transform: rotate(0deg);
-    border-radius: 50% 100%;
+    transform: rotate(0deg) translate(1000%, 50%);
+    border-radius: 5%;
     width: 11vw;
-    transform: translate(-2000px, -300px);
-
+    opacity: 1;
   }
-
-
-  50% {
-    transform: rotate(-180deg);
-    border-radius: 50%;
-    width: 33vw;
-    transform: translate(0px, 0px);
-  }
-
 
   100% {
-    transform: rotate(-360deg);
-    border-radius: 100% 50%;
-    transform: translate(500%, 250%);
+    transform: rotate(720deg) translate(-500%, -100%);
+    border-radius: 50%;
+    width: 33vw;
+    opacity: 0;
   }
 }
 
@@ -336,20 +317,15 @@ header {
 
 .card-container {
   position: relative;
-  /* border: 1px solid black; */
   margin-top: 1em;
-  padding: 3rem;
   display: grid;
   place-items: center;
   gap: 1.25rem;
   padding: 2rem;
-  grid-template-columns: repeat(auto-fill, 275px);
-  grid-template-rows: repeat(auto-fill, 1fr);
-  /* display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;*/
+  grid-template-columns: repeat(auto-fill, 250px);
+  grid-template-rows: repeat(auto-fill, 250px);
   justify-content: space-evenly;
-  width: 80%;
+  width: 100%;
 }
 
 .card {
@@ -358,6 +334,7 @@ header {
   display: flex;
   flex-direction: column;
   min-height: 150px;
+  max-width: 250px;
   aspect-ratio: 1/1;
   text-align: center;
   justify-content: center;
@@ -372,8 +349,8 @@ header {
   margin: auto;
   padding: 1em;
   height: 100%;
-  width: 100%;
   display: flex;
+
   text-align: center;
   flex-direction: column;
   align-content: center;
@@ -386,25 +363,28 @@ header {
 .card:hover {
   background: transparent;
   border: none;
+
 }
 
 .card:hover,
 .card:hover content {
   margin: auto;
   overflow: visible;
-  height: 100%;
   aspect-ratio: auto;
   border-radius: 25px;
-  min-height: 400px;
+  min-height: fit-content;
+  max-height: max-content;
 }
 
-.card:hover .content {
+.card:hover > .content {
   z-index: 11;
-  opacity: 1;
+  opacity: 1; 
   background: rgba(49, 49, 50, 1);
   border-radius: 25px;
   box-shadow: 4px 4px 10px 1px black;
-  width: 100%;
+  max-height: 100%;
+  min-width: 250px;
+
 }
 
 /* .card:hover> .card-container {
@@ -576,7 +556,7 @@ footer {
     max-width: 85vw;
   }
 
-  .card-container {
+  /* .card-container {
     grid-template-columns: repeat(auto-fill, 50vw);
   }
 
@@ -586,7 +566,7 @@ footer {
     place-self: center;
     max-width: 100%;
     height: 100%;
-  }
+  } */
 
 
   /* section {
