@@ -197,13 +197,13 @@ header {
 #title .spinner1 {
   background: linear-gradient(90deg, rgba(8, 249, 221, 0.655) 0%, rgba(0, 237, 162, 0.413) 90%);
   box-shadow: 15px 15px 150px 1px var(--project-bg-color), 15px 15px 750px 10px rgb(40, 43, 43);
-  animation: rotate-box 60s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite;
+  animation: rotate-box 15s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite;
 }
 
 #title .spinner2 {
   background: linear-gradient(90deg, rgba(185, 11, 11, 0.731) 0%, rgb(6, 6, 6) 90%);
   box-shadow: 15px 15px 150px 1px rgb(247, 247, 247), 0px 0px 100px 10px rgb(0, 24, 95);
-  animation: rotate-box-2 35s cubic-bezier(0.55, 0.055, 0.675, 0.19) infinite;
+  animation: rotate-box-2 15s cubic-bezier(0.55, 0.055, 0.675, 0.19) 10s infinite;
 }
 
 /* Spinner Animation */
@@ -211,22 +211,27 @@ header {
 @keyframes rotate-box {
 
   0% {
-    transform: rotate(0deg) translate(-100%, 100%);
+    top: -500px;
+    left: -1500px;
+    transform: rotate(0deg);
     border-radius: 0%;
     width: 44vw;
     opacity: 1;
   }
 
   50% {
-    transform: rotate(270deg) translate(0%, 0%);
-    border-radius: 0%;
+    transform: rotate(270deg);
+    border-radius: 50%;
     width: 22vw;
 
   }
 
   100% {
+    top:600px;
+    left: 1500px;
     width: 44vw;
-    transform: rotate(540deg) translate(1000%, -100%);
+
+    transform: rotate(540deg);
     border-radius: 0%;
     opacity: 0;
   }
@@ -236,14 +241,18 @@ header {
 @keyframes rotate-box-2 {
 
   0% {
-    transform: rotate(0deg) translate(1000%, 50%);
+    bottom: -500px;
+    right: -1000px;
+    transform: rotate(0deg);
     border-radius: 5%;
     width: 11vw;
     opacity: 1;
   }
 
   100% {
-    transform: rotate(720deg) translate(-500%, -100%);
+    bottom: 500px;
+    right: 1500px;
+    transform: rotate(720deg);
     border-radius: 50%;
     width: 33vw;
     opacity: 0;
@@ -441,22 +450,28 @@ display: flex;
 }
 
 .skills-list {
-  margin: .5em;
-  padding: .5em;
   display: flex;
+  flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-evenly;
-  max-width: 50ch;
-
-  /* width: 100%; */
+  margin: auto;
+justify-content: center;
+max-width: 100%;
   /* border-radius: 25px; */
 }
 
 .skill {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
   margin: 1rem;
-  /* max-width: 400px; */
   text-align: center;
+  justify-content: flex-start;
+  align-items: center;
+  min-width: 150px;
+  max-width: 350px; 
 }
+
+
 
 .skill ul {
   margin: .5em;
@@ -467,13 +482,23 @@ display: flex;
   justify-content: center;
 }
 
-.skill li {
-  background: linear-gradient(to left, var(--project-bg-color) 0%, var(--main-text-color) 100%);
+.skill  li {
+  background: linear-gradient(to left, hsl(3, 3%, 70%) 0%, hsl(10, 10%, 100%) 100%);
   color: var(--body-color);
-  padding: .5rem;
-  margin: .1rem;
-  text-shadow: 2px 2px 0.1em var(--main-text-color);
+  width: 100px;
+  height: 100px;
+  padding:.75em;
+  margin: .1em;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 2px 2px 0.1em var(--main-text-color);
   list-style: none;
+  align-items: center;
+  justify-content: center;
+}
+
+img {
+width: 100%;
 }
 
 .section-heading {
