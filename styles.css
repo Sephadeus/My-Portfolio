@@ -1,9 +1,7 @@
 /* Imports */
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap');
-
-@import url('https://fonts.googleapis.com/css2?family=Julius+Sans+One&family=Poppins:wght@200;400&display=swap');
-
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Aboreto&family=Montserrat:wght@100;200;300;500&family=Poppins:wght@200;400&display=swap');
 
 /* Global Settings */
 
@@ -34,19 +32,18 @@ html {
   --glow: rgba(0, 0, 0, 0.553);
   --blu-glow: rgba(0, 255, 247, 0.944);
   --border-bottom: 5px solid black;
-  --font-families: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  --font-families: 'Montserrat', 'Aboreto', 'Julius Sans One', "Poppins", "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
 /* Body */
 
 body {
-  font-family: 'Julius Sans One', "Poppins", "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-family: "Poppins", 'Montserrat', 'Aboreto', 'Julius Sans One', "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   position: relative;
   overflow-x: hidden;
   background-color: var(--body-color-alt);
   width: 100%;
-  font-size: clamp(.75rem, 2.5vmin, 3rem);
+  font-size: clamp(.65rem, 2.25vmin, 3rem);
 
 }
 
@@ -188,6 +185,8 @@ header {
 }
 
 #title .spinners {
+  transform: perspective(1000px);
+  transform-style: preserve-3d;
   width: 100%;
   height: 100%;
   /* background: repeating-radial-gradient(hsl(0, 0%, 0%), hsl(255, 0%, 100%) 10%); */
@@ -285,6 +284,7 @@ header {
 
 
 .title-block {
+  width: 100%;
   height: 50%;
   font-size: 150%;
   display: flex;
@@ -298,20 +298,20 @@ header {
   margin: 2.5rem;
 }
 
-.title-block>h1 {
+.title-block h1 {
   display: block;
   text-align: end;
   padding-right: 1em;
   width: 50%;
-  font-weight: lighter;
+  font-weight: 500;
   font-size: 200%;
   border-right: 1px solid var(--text-color);
 }
 
-.title-block>p {
+.title-block p {
   text-align: center;
-  margin: 1em;
-  padding: 2em;
+  margin: 1rem;
+  padding: 1rem;
   font-size: 70%;
 }
 
@@ -356,9 +356,9 @@ header {
   background-image: linear-gradient(-45deg,
       rgba(40, 39, 39, 0.95),
       rgba(103, 102, 102, 0.95),
-      rgba(177, 177, 177, 0.974),
-      rgba(108, 104, 104, 0.979),
-      rgba(27, 27, 27, 0.986));
+      rgba(4, 4, 4, 0.974),
+      rgba(63, 62, 62, 0.979),
+      rgba(16, 16, 16, 0.986));
   background-size: 300%;
   background-position: left;
   animation: bg-animate 10s alternate infinite;
@@ -367,13 +367,12 @@ header {
 
 .card-container {
   position: relative;
-  margin-top: 1em;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   /* place-items: center;
   gap: 1.25rem; */
-  padding: 3em 10rem;
+  padding: rem 10rem;
   justify-content: center;
   align-content: center;
   /* grid-template-columns: repeat(auto-fill, 300px); */
@@ -405,12 +404,13 @@ header {
 .card .content {
   /* margin: auto; */
   z-index: 11;
-
+  width: 100%;
+  margin: auto;
+  padding: 1rem;
   /* transform: perspective(1000px) rotateY(33deg);
   transition: transform .75s; */
   position: absolute;
   z-index: 0;
-  padding: 2rem;
   height: max-content;
   display: block;
   /* display: flex; */
@@ -445,12 +445,13 @@ display: flex;
 } */
 
 .content p {
-  margin-bottom: 2.65rem;
+  margin-bottom: 1.5rem;
 }
 
 .content-link {
+  margin: auto;
   background-color: var(--project-bg-color);
-  padding: .25rem;
+  padding: .45rem;
   text-decoration: none;
   color: var(--body-color);
   border: 1px solid var(--project-bg-color);
@@ -556,8 +557,10 @@ img {
   display: inline-block;
   border-bottom: 1px solid var(--text-color);
   font-weight: lighter;
+  font-size: 250%;
   align-items: center;
   text-align: center;
+  letter-spacing: .2rem;
   /* text-shadow: 1px 1px 1px 1px var(--body-color); */
 }
 
@@ -565,6 +568,7 @@ img {
 
 footer {
   width: 100%;
+  min-height: 100vh;
   text-align: center;
   align-items: center;
   background-color: var(--main-text-color);
@@ -594,8 +598,10 @@ footer {
 }
 
 #contact p {
-  display: block;
-  padding: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 30vh;
 }
 
 .contact-methods>a:hover {
@@ -668,7 +674,7 @@ footer {
   }
 
   .title-block>h1 {
-    width: 100%;
+    width: 80%;
     text-align: center;
     border-right: none;
     padding-right: 0;
@@ -682,7 +688,7 @@ footer {
     margin: 1em;
     padding: 2em;
     font-size: 70%;
-    width: 50%;
+    width: 100%;
   }
 
   .card-container {
@@ -708,15 +714,19 @@ footer {
     padding-top: 150px;
   }
 
+
+  #projects .section-heading {
+    margin-bottom: 1rem;
+  }
+
   .card {
     z-index: 0;
-    overflow: visible;
+    overflow: hidden;
     position: relative;
     display: flex;
-    min-height: 700px;
-    height: max-content;
-    min-width: 70vw;
-    max-width: 100%;
+    min-height: 450px;
+    width: 100%;
+   
     aspect-ratio: auto;
     transform: none;
     /* transform-style: preserve-3d; */
@@ -726,28 +736,32 @@ footer {
     justify-content: center;
     align-items: center;
     color: var(--body-color);
-    border-radius: 25px;
-    border: .5px solid var(--main-text-color);
-    max-height: max-content;
-    margin: 2rem;
+    border-radius: 0px;
+    /* border: .5px solid var(--main-text-color); */
+    margin: 0rem;
 
   }
 
   .card .content {
     z-index: 0;
     margin: auto;
-    padding: 2rem;
-    height: 50%;
+    /* max-height: 60%; */
+    min-height: max-content;
     /* display: flex; */
     background-image: linear-gradient(90deg,
-        rgba(97, 97, 97, 1),
+        rgb(102, 102, 103),
         rgb(27, 27, 27));
     background-size: 300%;
     background-position: left;
     text-align: center;
     align-content: center;
     justify-content: center;
-    border-radius: 0 0 25px 25px;
+    border-radius: 0px;
+    box-shadow: 
+      0px 0px 10px 3px rgba(171, 171, 171, 0.87),
+      0px 0px 15px 2px rgba(14, 223, 112, 0.874),
+      0px 0px 50px 5px rgba(51, 255, 0, 0.963);
+
     /* flex-direction: column;
     align-content: center;
     justify-content: start; */
