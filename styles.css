@@ -14,6 +14,8 @@
 html {
   scroll-behavior: smooth !important;
   color: var(--main-text-color);
+  font-weight: lighter;
+
   /* font-size: 24px; */
 }
 
@@ -32,18 +34,19 @@ html {
   --glow: rgba(0, 0, 0, 0.553);
   --blu-glow: rgba(0, 255, 247, 0.944);
   --border-bottom: 5px solid black;
-  --font-families: 'Montserrat', 'Aboreto', 'Julius Sans One', "Poppins", "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-families: "Poppins", 'Aboreto', 'Julius Sans One',  'Montserrat', "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
 /* Body */
 
 body {
-  font-family: "Poppins", 'Montserrat', 'Aboreto', 'Julius Sans One', "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-family: var(--font-families);
+  font-weight: 200;
   position: relative;
   overflow-x: hidden;
   background-color: var(--body-color-alt);
   width: 100%;
-  font-size: clamp(.65rem, 2.25vmin, 3rem);
+  font-size: clamp(.65rem, 2vmin, 10rem);
 
 }
 
@@ -89,6 +92,16 @@ a {
 
   100% {
     filter: blur(0);
+  }
+}
+
+@keyframes bg-animate {
+  0% {
+    background-position: left;
+  }
+
+  100% {
+    background-position: right;
   }
 }
 
@@ -182,16 +195,30 @@ header {
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  background-blend-mode: darken;
+  background-image:
+    repeating-linear-gradient(45deg,
+      rgba(64, 63, 66, 0.9),
+      rgba(22, 8, 32, 0.9) 100%),
+    url('https://i.imgur.com/atpa7.jpeg');
+  background-position: center;
+  animation: bg-animate 60s alternate infinite;
+
 }
 
 #title .spinners {
-  transform: perspective(1000px);
+  position: absolute;
+  /* z-index: -1; */
+  width: 80%;
+  height: 60%;
+  top: 50%;
+  left: 50%;
+  transform: perspective(1000px) translate(-50%, -50%) rotateY(20deg) skewx(0deg);
   transform-style: preserve-3d;
-  width: 100%;
-  height: 100%;
-  /* background: repeating-radial-gradient(hsl(0, 0%, 0%), hsl(255, 0%, 100%) 10%); */
-  opacity: .25;
-  filter: blur(5px);
+  min-height: max-content;
+  aspect-ratio: 1/1;
+  opacity: .85;
+
 }
 
 #title .spinner {
@@ -203,17 +230,24 @@ header {
 
 #title .spinner1 {
   /* overflow: hidden; */
-  border-left: 120px solid transparent;
-  border-right: 120px solid transparent;
-  border-bottom: 200px solid rgb(242, 209, 151);
+  border-left: 60px solid transparent;
+  border-right: 60px solid transparent;
+  border-bottom: 100px solid rgb(38, 24, 107);
+  transform-origin: bottom center;
   /* background: linear-gradient(90deg, rgba(8, 249, 221, 0.655) 0%, rgba(0, 237, 162, 0.413) 90%); */
   /* box-shadow: 15px 15px 150px 1px var(--project-bg-color), 15px 15px 750px 10px rgb(40, 43, 43); */
   animation: rotate-box 30s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite;
 }
 
 #title .spinner2 {
-  background: linear-gradient(90deg, rgba(58, 5, 5, 0.731) 0%, rgb(6, 6, 6) 90%);
-  box-shadow: 15px 15px 150px 1px rgb(255, 214, 126), 0px 0px 100px 10px rgb(0, 24, 95);
+  background: linear-gradient(90deg,
+      rgba(58, 5, 5, 0.731) 0%,
+      rgb(6, 6, 6) 90%);
+
+  box-shadow:
+    15px 15px 150px 1px rgb(255, 214, 126),
+    0px 0px 100px 10px rgb(0, 24, 95);
+
   animation: rotate-box-2 12s cubic-bezier(0.55, 0.055, 0.675, 0.19) infinite;
 }
 
@@ -226,6 +260,10 @@ header {
     left: -50vw;
     transform: rotate(0deg);
     border-radius: 0%;
+    opacity: 0;
+  }
+
+  10% {
     opacity: 1;
   }
 
@@ -251,6 +289,10 @@ header {
     transform: rotate(0deg);
     border-radius: 5%;
     width: 11vw;
+    opacity: 0;
+  }
+
+  10% {
     opacity: 1;
   }
 
@@ -259,7 +301,7 @@ header {
     right: 100vw;
     transform: rotate(-720deg);
     border-radius: 50%;
-    width: 33vw;
+    width: 22vw;
     opacity: 0;
   }
 }
@@ -267,18 +309,35 @@ header {
 
 #title .title-content {
   filter: contrast(100%);
-  height: 80%;
-  width: 100%;
+  box-shadow: 
+  0px 0px 20px 1px rgb(255, 214, 126),
+  0px 0px 40px 2px rgb(0, 24, 95);
+  height: max-content;
+  padding: 1.5rem;
+  width: 80%;
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%) rotateY(-5deg) rotateX(-20deg);
   align-items: center;
   justify-content: center;
   display: flex;
   flex-direction: column;
+  border-radius: 50px;
   letter-spacing: .3ch;
+  /* transform-origin:  center;
+  transform-style: preserve-3d; */
   /* text-shadow: 2px 2px 2px rgb(77, 75, 75), 2px 2px 2px rgba(200, 196, 196, 0.708); */
+
+  background-image: repeating-linear-gradient(to right,
+      rgba(19, 13, 51, 1),
+      rgba(0, 0, 0, 1),
+      rgba(36, 36, 36, 1),
+      rgba(15, 10, 43, 0.9) 100%);
+  /* background-size: 300%; */
+  /* background-position: left; */
+  /* transform: rotateY(20deg); */
+  /* animation: bg-animate 60s alternate infinite; */
 }
 
 
@@ -295,24 +354,21 @@ header {
   align-content: center;
   vertical-align: middle;
   /* padding-top: 150px; */
-  margin: 1rem;
+  margin: auto;
 }
 
 .title-block h1 {
   display: block;
   text-align: end;
-  padding-right: 1em;
-  width: 50%;
-  font-weight: 500;
-  font-size: 200%;
+  padding-right: 1rem;
+  /* width: 50%; */
   border-right: 1px solid var(--text-color);
 }
 
 .title-block p {
   text-align: center;
-  margin: 1rem;
-  padding: 1rem;
-  font-size: 70%;
+  /* margin: 1rem;
+  padding: 1rem; */
 }
 
 #title p {
@@ -335,6 +391,7 @@ header {
   height: max-content;
   color: var(--text-color);
   display: block;
+  font-weight: lighter;
   flex-direction: column;
   justify-content: center;
   align-content: center;
@@ -349,7 +406,7 @@ header {
   max-width: 100%;
   justify-content: center;
   align-items: center;
-  padding:  2rem 10vw;
+  padding: 2rem 10vw;
 }
 
 #projects {
@@ -455,7 +512,7 @@ display: flex;
   text-decoration: none;
   color: var(--body-color);
   border: 1px solid var(--project-bg-color);
-  border-radius: 15px;
+  border-radius: 5px;
   text-decoration: none;
   /* opacity: 0; */
   cursor: pointer;
@@ -522,10 +579,13 @@ display: flex;
 
 }
 
-
+.skill label {
+  font-size: 1rem;
+  font-weight: lighter;
+}
 
 .skill ul {
-  margin: .5em;
+  margin: 1rem;
   display: flex;
   flex-direction: row;
   text-align: center;
@@ -538,8 +598,8 @@ display: flex;
   color: var(--body-color);
   padding: .75em;
   margin: .1em;
-  min-width: 40px;
-  max-width: 100px;
+  min-width: 3.5rem;
+  max-width: 5rem;
   border-radius: 50%;
   overflow: hidden;
   border: 3px solid var(--main-text-color);
@@ -616,7 +676,7 @@ footer {
 
 
 /* Media Queries */
- @media (min-width: 801px) {
+@media (min-width: 801px) {
   .card:hover {
     z-index: 11;
     background: transparent;
@@ -629,14 +689,14 @@ footer {
     /* max-width: 300%;
     min-width: 150%; */
   }
-  
+
   .card:hover,
   .card:hover content {
     margin: auto;
     border-radius: 25px;
     max-height: max-content;
   }
-  
+
   .card:hover .content {
     z-index: 11;
     opacity: 1;
@@ -648,7 +708,7 @@ footer {
     /* max-height: 100%;
     min-width: 250px; */
   }
- }
+}
 
 @media(max-width: 800px) {
   /* html {
@@ -726,7 +786,7 @@ footer {
     display: flex;
     min-height: 450px;
     width: 100%;
-   
+
     aspect-ratio: auto;
     transform: none;
     /* transform-style: preserve-3d; */
@@ -743,11 +803,14 @@ footer {
   }
 
   .card .content {
+    /* width: 90%; */
     z-index: 0;
     margin: auto;
-    /* max-height: 60%; */
+    height: 50%;
     min-height: max-content;
-    /* display: flex; */
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     background-image: linear-gradient(90deg,
         rgb(102, 102, 103),
         rgb(27, 27, 27));
@@ -756,9 +819,8 @@ footer {
     text-align: center;
     align-content: center;
     justify-content: center;
-    border-radius: 0px;
-    box-shadow: 
-      0px 0px 10px 3px rgba(171, 171, 171, 0.87),
+    border-radius: 25px 25px 0 0;
+    box-shadow: inset 0px 0px 10px 3px rgba(171, 171, 171, 0.87),
       0px 0px 15px 2px rgba(14, 223, 112, 0.874),
       0px 0px 50px 5px rgba(51, 255, 0, 0.963);
 
@@ -771,6 +833,18 @@ footer {
     animation: bg-animate 10s alternate infinite;
     position: absolute;
     bottom: 0;
+  }
+
+  .card.content.content-title,
+  .card.content.content-desc {
+    margin: auto;
+    padding: 2rem;
+  }
+
+  .card.content.content-desc {
+    margin-left: auto;
+    padding: 3rem;
+    width: 50%;
   }
 
   /* .card:hover {
