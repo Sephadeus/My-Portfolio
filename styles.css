@@ -443,12 +443,15 @@ header {
 
 .card-container {
   position: relative;
-  display: flex;
-  flex-direction: row;
+  /* display: flex;
+  flex-direction: row; */
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 15rem);
+  grid-template-rows: repeat(auto-fill, 1fr);
   flex-wrap: wrap;
   /* place-items: center;
   gap: 1.25rem; */
-  padding: rem 10rem;
+  padding: 2rem 12rem;
   justify-content: center;
   align-content: center;
   /* grid-template-columns: repeat(auto-fill, 300px); */
@@ -462,7 +465,7 @@ header {
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  width: 12rem;
+  width: 15rem;
   margin: 5rem;
   transform: perspective(1000px) rotateY(33deg);
   transition: transform .5s;
@@ -489,16 +492,16 @@ header {
   z-index: 0;
   height: max-content;
   display: block;
-  /* display: flex; */
+  display: flex;
   background-image: linear-gradient(45deg,
       rgb(32, 32, 32),
       rgb(10, 1, 43));
   background-size: 300%;
   background-position: left;
   text-align: center;
-  /* flex-direction: column;
+  flex-direction: column;
   align-content: center;
-  justify-content: start; */
+  justify-content: start;
   opacity: 0;
   /* background: rgba(49, 49, 50, 1); */
   /* animation: bg-animate 10s alternate infinite; */
@@ -531,6 +534,12 @@ display: flex;
   color: var(--project-bg-color);
 }
 
+
+
+.Sphere {
+background: url("https://imgur.com/S43pPDS.png") center;
+background-size: cover;
+}
 
 .DAAM {
   background: url("https://github.com/Sephadeus/DAAM-App/raw/main/assets/images/DAAM%20Web%20Capture.jpeg") center;
@@ -710,16 +719,16 @@ footer {
 
   .card:hover,
   .card:hover content {
-    margin-right: 10rem;
+    /* margin-right: 10rem; */
     border-radius: 25px;
     /* max-height: max-content; */
   }
 
   .card:hover .content {
-    z-index: 11;
+    z-index: 99;
     opacity: 1;
     /* transform: rotateY(-33deg); */
-    min-width: 25rem;
+    min-width: 20rem;
     max-width: 80vw;
     border-radius: 25px;
     box-shadow: 0px 14px 10px 1px black;
@@ -793,17 +802,16 @@ display: inline-block;
     margin-bottom: 1.5rem;
     border-bottom: none;
   }
-.card-container {
-  
-}
+
   .card {
     z-index: 0;
     overflow: hidden;
     position: relative;
     display: flex;
+    padding: 5rem;
+    flex-direction: column;
     min-height: 450px;
-    width: 100%;
-
+    min-width: 100vw;
     aspect-ratio: auto;
     transform: none;
     /* transform-style: preserve-3d; */
@@ -828,10 +836,9 @@ display: inline-block;
     margin: auto;
     min-height: 50%;
     max-height: 100%;
-    width: 103%;
     /* min-height: max-content; */
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: wrap;
     background-image: linear-gradient(45deg,
       rgb(32, 32, 32),
@@ -859,14 +866,14 @@ display: inline-block;
 
   .card.content.content-title,
   .card.content.content-desc {
-    margin: auto;
+    /* margin: auto; */
     padding: 2rem;
   }
 
   .card.content.content-desc {
-    margin-left: auto;
-    padding: 3rem;
-    width: 50%;
+    /* margin-left: auto; */
+    /* padding: 3rem; */
+    /* width: 50%; */
   }
 
 
@@ -890,11 +897,12 @@ max-width: 300%;
     overflow: visible;
   } */
 }
-
+/* 
 
  @media(max-width: 300px) {
 
   *{ padding: 0;}
+
   .card {
     display: flex;
     flex-direction: row;
@@ -902,9 +910,9 @@ max-width: 300%;
   }
 
   .card.content {
-    width: 50%;
+    width: 100%;
   }
- }
+ } */
 /*
    html {
     font-size: 14px;
