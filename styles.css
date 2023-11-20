@@ -35,7 +35,7 @@ html {
   --blu-glow: rgba(0, 255, 247, 0.944);
   --cube: linear-gradient(to right, rgba(0, 0, 0, 0.577), rgba(0,0,0,.5));
   --border-bottom: 5px solid black;
-  --cubeside-distance: 5rem;
+  --cubeside-distance: 3.3rem;
   --font-families: "Poppins", 'Aboreto', 'Julius Sans One', 'Montserrat', "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
@@ -43,12 +43,11 @@ html {
 
 body {
   font-family: var(--font-families);
-  font-weight: 500;
   position: relative;
   overflow-x: hidden;
   background-color: var(--body-color-alt);
   max-width: 100%;
-  font-size: clamp(.65rem, 2.5vmin, 10rem);
+  font-size: clamp(.75rem, 2.65vmin, 10rem);
 
 }
 
@@ -124,7 +123,7 @@ header {
   background-color: var(--header-color);
   width: 100%;
   min-height: max-content;
-  max-height: 200px;
+  max-height: 150px;
   box-shadow: 5px 0px 5px 5px var(--main-text-color);
   /* text-shadow: 1px 1px 0em var(--main-text-color); */
   padding: .3rem;
@@ -188,14 +187,16 @@ header {
 /* Title section */
 
 #title {
+  padding-top: 10rem;
  display: flex;
  flex-flow: row wrap;
   overflow: hidden;
-  background-image:
+  /* background-image:
     repeating-linear-gradient(45deg,
       rgba(64, 63, 66, 0.9),
       rgba(22, 8, 32, 0.9) 100%),
-    url('https://i.imgur.com/atpa7.jpeg');
+    url('https://i.imgur.com/atpa7.jpeg'); */
+    background-color: #111;
   background-position: center;
   background-size: cover;
   animation: bg-animate 60s alternate infinite;
@@ -204,9 +205,9 @@ header {
 
 #title .spinners {
   /* z-index: -1; */
-  margin: 2rem;
+  margin: -10rem auto 4rem auto;
   aspect-ratio: 1/1;
-  border: 50px solid rgb(139, 138, 138); 
+  border: 30px solid rgb(139, 138, 138); 
   box-shadow: 0px 0px 5px rgb(197, 121, 255), 
   0px 0px 10px rgba(136, 0, 255, 0.585), 
   0px 0px 25px rgb(246, 113, 255);
@@ -216,7 +217,6 @@ header {
   transform-origin: bottom;
   transform-style: preserve-3d;
   opacity: 1;
-
 }
 
 #title .spinner1 {
@@ -226,14 +226,14 @@ header {
 }
 
 .cubeside {
-  margin: -4rem;
+  margin: -3rem;
   position: absolute;
   aspect-ratio: 1/1;
   border: 1px dotted white;
   box-shadow: 0px 0px 5px rgb(255, 255, 255), 
-  0px 0px 10px rgb(255, 255, 255), 
-  0px 0px 15px rgb(255, 255, 255);
-    width: 8rem;
+  0px 0px 7px rgb(255, 255, 255), 
+  0px 0px 12px rgb(255, 255, 255);
+    width: 6rem;
   background-image: var(--cube);
 }
 
@@ -309,6 +309,7 @@ text-align: center;
 
 #title p {
   padding: 1rem;
+  width: 50vw;
 }
 
 
@@ -468,14 +469,17 @@ background-size: cover;
 .Team-Profile-Generator {
   background: url("https://i.imgur.com/reIoO7k.png") center;
   background-size: cover;
+}
 
+.Wordle {
+  background: url('assets/images/SVG/2023-11-20\ 18.36.07\ sephadeus.github.io\ 6265beb5e324.png');
+  background-size: cover;
 }
 
 .SQL-CMS {
   background: url("https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.ks7000.net.ve%2Fwp-content%2Fuploads%2F2020%2F03%2FMySQL.png&f=1&nofb=1&ipt=e91087059ac3fb48b48e2533aaa9723cf6759f5064b8805d258eb1b970d2c87c&ipo=images") center;
 
   background-size: cover;
-
 }
 
 .Console-blog {
@@ -532,8 +536,8 @@ background-size: cover;
   color: var(--body-color);
   padding: .75em;
   margin: .1em;
-  min-width: 3.5rem;
-  max-width: 5rem;
+  min-width: 2rem;
+  max-width: 4rem;
   border-radius: 50%;
   overflow: hidden;
   border: 3px solid var(--main-text-color);
