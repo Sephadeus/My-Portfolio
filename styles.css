@@ -24,7 +24,7 @@ html {
   --project-bg-color: var(--nav-link-bg);
   --footer-color: rgb(22, 22, 22);
   --body-color: rgb(222, 197, 169);
-  --body-color-alt: rgb(96, 15, 246);
+  --body-color-alt: #0882fc;
   --text-color: #e2e1e1;
   --main-text-color: #1f1f1e;
   --nav-link-bg: var(--header-color);
@@ -36,7 +36,7 @@ html {
   --cube: linear-gradient(to right, rgb(0, 0, 0), rgb(46, 45, 45));
   --border-bottom: 5px solid black;
   --cubeside-distance: 4rem;
-  --font-families: "Poppins", 'Aboreto', 'Julius Sans One', 'Montserrat', "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-families: 'Julius Sans One', 'Montserrat', "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
 /* Body */
@@ -46,8 +46,8 @@ body {
   position: relative;
   overflow-x: hidden;
   background-color: var(--body-color-alt);
-  font-size: clamp(.75rem, 2.65vmin, 10rem);
-
+  font-size: clamp(.75rem, 2.75vmin, 10rem);
+  font-weight: 200;
 }
 
 body::-webkit-scrollbar {
@@ -283,15 +283,17 @@ border-radius: 0px 0px 30px 30px;
       rgba(15, 10, 43, 1) 100%);
 }
 
-.section-heading,
-.title-block {
+.section-heading{
   background-image: repeating-linear-gradient(to right,
-      rgb(169, 166, 166),
-      rgb(166, 166, 166) 100%);
+      rgb(247, 244, 244),
+      rgb(236, 232, 232) 100%);
   background-clip: text;
   font-size: 150%;
   -webkit-background-clip: text;
   color: transparent;
+  text-shadow: 1px 1px 1px 1px #111, 
+  2px 2px 2px 2px #333,
+  3px 3px 10px 3px #000;
   background-size: 300%;
   animation: bg-animate 20s alternate infinite;
 }
@@ -391,8 +393,8 @@ box-shadow: 1px 1px 0px 2px rgba(148, 148, 148, 0.899),
 2px 4px 0px 2px rgba(108, 108, 108, 0.899),
 3px 4px 0px 5px rgba(38, 37, 38, 0.899),
 0px 0px 50px 0px rgba(217, 215, 215, 0.899);
-transform: rotateY(-15deg) rotateX(5deg) translateZ(-200px) scale(1.15);
-margin: auto;
+transform: rotateY(-15deg) rotateX(5deg) translateZ(-200px);
+margin: 5rem auto;
 }
 
 @media (max-width: 950px) {
@@ -426,7 +428,7 @@ margin: auto;
   grid-template-rows: repeat(auto-fill, 1fr);
   place-items: center;
   place-content: center;
-  padding: 2rem 5rem;
+  padding: 2rem 8rem;
 
 }
 
@@ -476,7 +478,7 @@ margin: auto;
 .card:hover {
   overflow: visible;
   min-height: 100%;
-  min-width: 50vw;
+  min-width: 40vw;
   max-width: 100vw;
   z-index: 5;
   transform: rotateY(0deg) scale(1);
@@ -647,8 +649,69 @@ footer {
   margin-top: 500px;
 }
 
-.contact-methods {
 
+.contact-form ul {
+  margin: 2rem auto;
+display: grid;
+place-items: center;
+gap: 2rem;
+}
+
+.form-item textarea {
+  max-width: 100%;
+  font-family: inherit;
+}
+
+.form-item input:focus,
+.form-item textarea:focus {
+  box-shadow: 0px 0px 5px 3px #05d5f1;
+} 
+
+li.form-item {
+  min-width: 70vw;
+  max-width: 700px;
+  list-style: none;
+}
+
+/* .form-item {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+} */
+
+.form-item label {
+margin-right: 2rem;
+}
+
+.form-item input, .form-item textarea {  
+  width: 100%;
+  border-radius: 10px;
+  padding: 1rem;
+  box-shadow: 0px 0px 3px 0px #333;
+}
+
+.submit-btn {
+  border-radius: 30px;
+  padding: .5rem 1.75rem;
+  transition: all .3s; 
+  border: 5px solid #fff;
+  background-color: #333;
+  color: white;
+}
+
+.submit-btn:hover {
+  transform: scale(1.1);
+  background-color:white ;
+  color: #333;
+  font-weight: bold;
+}
+
+.submit-btn:active {
+  transform: scale(.9);
+}
+
+.contact-methods {
+  margin-top: 5rem;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -677,10 +740,9 @@ footer {
 }
 
 .contact-methods>a:hover {
-  scale: 1.3;
   padding: .5em;
-  border-radius: 40px;
-  background-color: var(--body-color);
+  border-radius: 50px 0px 50px 50px;
+background-color: #fff;
   color: var(--main-text-color);
 
 }

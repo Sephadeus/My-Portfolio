@@ -10,15 +10,7 @@
   <link rel="stylesheet" type="text/css" href="./styles.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&display=swap" rel="stylesheet">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Julius+Sans+One&family=Poppins:wght@200;400&display=swap"
-    rel="stylesheet">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Aboreto&family=Poppins:wght@200;400&display=swap"
-    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Gruppo&family=Poppins:wght@200;400&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,800;0,900;1,100;1,200;1,400;1,800;1,900&family=Red+Hat+Display&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -99,19 +91,15 @@
       <article>
         <h2>Hey! I am Joe, </h2>
         <p>
-          a UConn/Edx full stack web development boot camp graduate
-          currently residing in Connecticut and seeking an entry-level front end or full stack web developer position to
-          apply foundational programming principles, gain practical experience in web development and design, and offer
-          my unique perspective to an organization.
+          a certified full stack web developer on a mission to bring your digital dreams to life. With a comprehensive skill set acquired through rigorous training and real-world projects, I am your go-to freelance professional for all things web development.
+
+          As a developer, I specialize in crafting seamless and dynamic online experiences. Whether you're envisioning a sleek front-end interface or a robust back-end infrastructure, I've got the expertise to turn your ideas into reality. My commitment to staying abreast of the latest industry trends ensures that the solutions I deliver are not only cutting-edge but also tailored to meet the unique needs of your project.
           <br>
           <br>
-          I am eager to learn useful new skills, exercise the ones I've mastered, and deliver excellence by creating
-          responsive and user friendly web pages that foster a positive environment for clients or an organization.
+          Beyond the lines of code, you'll find a passionate individual who takes pride in delivering not just functional websites, but captivating online experiences. My journey in the world of web development is marked by a dedication to continuous learning, ensuring that I am always equipped with the latest tools and technologies to elevate your digital presence.
           <br>
           <br>
-          Some of my interests include music production, cooking, fragrance crafting, gaming, surfing YouTube, and
-          learning how to create newer, cooler, user friendly designs and functionality from CodePen and other coding
-          resources.
+          Beyond web development, my interests span music production, cooking, fragrance crafting, gaming, and exploring coding resources such as CodePen and other platforms on YouTube. I am dedicated to staying abreast of the latest trends and incorporating innovative designs and functionalities into my work.
         </p>
       </article>
 
@@ -235,6 +223,27 @@
       </div>
 
       <div class="card-container">
+
+        <div class="card Painting">
+          <div class="content">
+            <h3 class="content-title">Painting Business Site</h3>
+            <div class="content-desc">
+              <p>A modern painting business website in progress for Derisi Painting LLC.</p>
+            </div>
+            <a href="https://sephadeus.github.io/Derisi-Painting-Website/" class="content-link" target="_blank">Read More</a>
+          </div>
+        </div>
+
+        <div class="card italianice">
+          <div class="content">
+            <h3 class="content-title">Italian Ice Food Truck</h3>
+            <div class="content-desc">
+              <p>A colorful website in progress for an Italian ice food truck.</p>
+            </div>
+            <a href="https://sephadeus.github.io/Derisi-Painting-Website/" class="content-link" target="_blank">Read More</a>
+          </div>
+        </div>
+
         <div class="card Sphere">
           <div class="content">
             <h3 class="content-title">Sphere</h3>
@@ -297,6 +306,54 @@
       <div class="section-heading">
         <h2>Contact</h2>
       </div>
+
+      <form class="contact-form" id="contactForm" target="_blank" action="https://formsubmit.co/53b700ebc9577ae1c613e7d8bfd7b73c" 
+                        method="POST">
+
+                        <!-- Honeypot for spammers -->
+                        <input type="text" name="_honey" style="display:none">
+
+                        <!-- Disable Captcha -->
+                        <input type="hidden" name="_captcha" value="false">
+
+                        <input type="hidden" name="_template" value="table">
+
+                        <!-- Redirects successful submissions to thank you page -->
+                        <input type="hidden" name="_next" value="">
+
+                        <!-- Form -->
+                        <ul>
+                            <li class="form-item">
+                                    <!-- <label for="fullName">Name</label> -->
+                                    <input required id="fullName" name="Full&nbsp;Name" type="text" placeholder="Full Name">
+                            </li>
+
+                            <li class="form-item">
+                                    <!-- <label for="emailAddress">Email</label> -->
+                                    <input required id="emailAddress" name="Email" type="email" 
+                                        placeholder="Email Address">
+                            </li>
+
+                            <li class="form-item">
+                                    <!-- <label for="phoneNumber">Phone</label> -->
+                                    <input required id="phoneNumber" name="Phone&nbsp;Number" type="text"
+                                        placeholder="Phone Number">
+                            </li>
+
+                            <li class="form-item">
+                                    <!-- <label for="subject">Subject</label> -->
+                                    <input required id="subject" name="_subject" type="text"
+                                        placeholder="Message Subject">
+                            </li>
+
+                            <li class="form-item">
+                                    <!-- <label for="yourMessage">Your Message</label> -->
+                                    <textarea type="text" id="yourMessage" name="Their&nbsp;Message"
+                                        placeholder="Your message goes here"></textarea>
+                            </li>
+                        </ul>
+                        <button type="submit" class="submit-btn" id="submitBtn">Send</button>
+                    </form>
 
       <div class="contact-methods">
 
