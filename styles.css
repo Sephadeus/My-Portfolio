@@ -42,11 +42,12 @@ html {
 /* Body */
 
 body {
+  width: 100vw;
   font-family: var(--font-families);
   position: relative;
   overflow-x: hidden;
   background-color: var(--body-color-alt);
-  font-size: clamp(.75rem, 2.75vmin, 10rem);
+  font-size: clamp(.75rem, 3vmin, 10rem);
   font-weight: 200;
 }
 
