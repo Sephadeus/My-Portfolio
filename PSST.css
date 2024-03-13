@@ -43,8 +43,7 @@
 }
 
 body {
-    margin: 0;
-    padding: 0;
+    position: relative;
     font-size: 100%;
     font-family: var(--display-fonts), var(--fallback-font-list);
     width: 100%;
