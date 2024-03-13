@@ -104,13 +104,18 @@ header {
   justify-content: space-evenly;
 }
 
+header h1{
+  text-align: center;
+  margin: .5em;
+}
+
 .nav-links {
   display: inline-block;
   text-align: center ;
-
 }
 
 .nav-links a {
+  margin: 1em;
   color: var(--text-color);
   word-break: keep-all;
   white-space: nowrap;
@@ -118,14 +123,14 @@ header {
   font-weight: bold;
   cursor: pointer;
   text-decoration: none;
-  padding: .5rem;
-  border-radius: 30px;
+  padding: .25em;
+  border-radius: 20px;
   transition: all .2s;
 }
 
 .nav-links a:hover,
 .nav-links a:focus {
-  padding: .75rem;
+  padding: .5em;
   color: var(--text-color);
   background-image: linear-gradient(to top right, #d35d0f, #ad4b00);
   text-shadow: none;
@@ -201,13 +206,13 @@ header {
 }
 
 .about-content article {
-  margin: 1em;
-  max-width: 400px;
+  margin: 2em;
+  max-width: 800px;
 }
 
 .about-content article p {
-
-  padding: 2em;
+  font-size: larger;
+  padding: 1em;
   color: #faf5f5;
 }
 
@@ -230,7 +235,7 @@ header {
   overflow: hidden;
   filter: saturate(.75);
   border-radius: 20px;
-  width: clamp(0em, 25vw, 500px);
+  width: clamp(0em, 60vw, 500px);
   transform-style: preserve-3d;
   transform-origin: center;
   border: 2px inset #111;
@@ -239,7 +244,7 @@ header {
     3px 4px 0px 5px rgba(38, 37, 38, 0.899),
     0px 0px 50px 0px rgba(217, 215, 215, 0.899);
   transform: rotateY(-5deg) rotateZ(5deg) translateZ(-200px);
-  margin: 2rem auto;
+  margin:  auto;
 }
 
 @media (max-width: 950px) {
@@ -396,23 +401,23 @@ header {
 
 #skills {
   color: var(--text-color);
-  background: var(--blue-theme-1);
+  background: var(--blue-theme-1);  
+  overflow-x: hidden;
+  height: 100%;
 }
 
-.skills-list {  
-  padding: 3em;
-
+.skills-list { 
+  margin: 5em auto;
   display: flex;
+  min-height: fit-content;
   flex-direction: row;
-  margin: auto;
   justify-content: left;
-  overflow-x: hidden;
 }
 
 .skill {
   display: flex;
   flex-direction: row;
-  margin: 0rem;
+  padding: 2em;
   text-align: center;
   align-items: center;
   animation: move-left 30s linear infinite;
@@ -434,7 +439,6 @@ header {
 }
 
 .skill ul {
-  padding: 2em;
   display: flex;
   flex-direction: row;
   text-align: center;
@@ -457,19 +461,19 @@ header {
 }
 
 .skill li::after {
-  z-index: 10;
   position: absolute;
- content: attr(data-desc);
+  top: 100%;
+  left: 50%;
+  translate: -50% 0%;
+  width: fit-content;
+  content: "";
 }
 
 .skill li:hover::after {
-  z-index: 3;
-  height: 100px;
-  width: 100px;
+  content: attr(data-desc);
+ padding: 1em;
   color: var(--text-color);
-  bottom: -100%;
- left: 50%;
-}
+font-weight: bold;}
 
 .skill ul h4 label {
   font-weight: bold;
